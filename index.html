@@ -186,21 +186,25 @@ footer {
 
 /* Styles responsifs */
 @media(max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem; /* Réduction de la taille du titre pour mobile */
+    }
+
     .menu-toggle {
         display: block;
     }
 
     nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-color);
     }
 
     nav.active {
         display: block;
-        position: absolute;
-        top: 60px; /* ajuster selon la hauteur de l'en-tête */
-        left: 0;
-        right: 0;
-        background: var(--primary-color);
     }
 
     nav ul {
@@ -208,9 +212,14 @@ footer {
     }
 
     nav li {
+        display: block;
         margin: 10px 0;
     }
-}
+
+    nav a {
+        display: block;
+        padding: 10px 0;
+    }
 
 
     .section {
