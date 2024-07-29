@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>La Plume Journalistique</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -76,10 +76,6 @@
         nav a:hover {
             color: var(--accent-color);
         }
-
-nav.active ul {
-    display: block;
-}
 
         .section {
             background: #ffffff;
@@ -169,35 +165,53 @@ nav.active ul {
             margin-top: 30px;
         }
 
-        /* Styles pour les mobiles et tablettes */
-        @media(max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            nav ul {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                color: var(--secondary-color);
-                font-size: 2rem;
-                text-align: center;
-            }
-            nav.active ul {
-                display: block;
-                text-align: center;
-            }
-            nav li {
-                display: block;
-                margin: 10px 0;
-            }
-        }
+        /* Styles pour le menu hamburger */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1001;
+}
 
-        /* Icône du menu hamburger */
-        .menu-toggle {
-            display: none;
-        }
+@media(max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        padding: 20px 0;
+    }
+    nav.active ul {
+        display: block;
+    }
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Assurez-vous que le contenu ne dépasse pas l'écran */
+body {
+    overflow-x: hidden;
+}
+
+.section {
+    padding: 20px;
+    margin: 20px 0;
+}
 
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
