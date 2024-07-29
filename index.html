@@ -181,10 +181,7 @@ footer {
     cursor: pointer;
     color: var(--secondary-color);
     font-size: 1.5rem;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    z-index: 1001;
 }
 
 /* Styles responsifs */
@@ -195,6 +192,7 @@ footer {
 
     header .container {
         justify-content: space-between;
+        align-items: center;
     }
 
     header h1 {
@@ -209,6 +207,8 @@ footer {
 
     .menu-toggle {
         display: block;
+        position: static; /* Changé de absolute à static */
+        margin-left: auto; /* Ajouté pour pousser à droite */
     }
 
     nav {
@@ -219,6 +219,7 @@ footer {
         height: 100vh;
         background-color: var(--primary-color);
         transition: right 0.3s ease;
+        z-index: 1000;
     }
 
     nav.active {
@@ -230,6 +231,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         height: 100%;
+        padding: 0;
     }
 
     nav li {
