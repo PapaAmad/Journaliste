@@ -322,6 +322,23 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('nav').classList.toggle('active');
 });
 
+// Fermer le menu lors du clic sur un lien de navigation
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelector('nav').classList.remove('active');
+    });
+});
+
+// Fermer le menu lorsqu'on clique en dehors
+document.addEventListener('click', function(event) {
+    const nav = document.querySelector('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+        nav.classList.remove('active');
+    }
+});
+
+
 // JavaScript pour une navigation fluide
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
