@@ -165,12 +165,20 @@
             margin-top: 30px;
         }
 
-        header {
+/* Styles existants... */
+
+header {
     background: var(--primary-color);
     color: var(--secondary-color);
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: relative;
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
@@ -185,10 +193,6 @@ header h1 {
     cursor: pointer;
     color: white;
     font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
     z-index: 1001;
 }
 
@@ -197,13 +201,19 @@ header h1 {
         padding: 0.5rem 0;
     }
 
+    header .container {
+        justify-content: space-between;
+    }
+
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        max-width: 80%;
+        text-align: left;
     }
 
     .container {
         width: 100%;
-        padding: 10px;
+        padding: 10px 20px;
     }
 
     nav {
