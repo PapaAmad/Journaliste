@@ -186,57 +186,44 @@ footer {
 
 /* Styles responsifs */
 @media(max-width: 768px) {
-    header {
-        padding: 0.5rem 0;
-    }
-
     header .container {
+        display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 10px 20px;
     }
 
     header h1 {
-        font-size: 1.5rem;
-        max-width: 70%;
-    }
-
-    .container {
-        width: 95%;
-        padding: 10px;
+        font-size: 1.2rem;
+        margin: 0;
     }
 
     .menu-toggle {
         display: block;
-        position: static; /* Changé de absolute à static */
-        margin-left: auto; /* Ajouté pour pousser à droite */
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
 
     nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background-color: var(--primary-color);
-        transition: right 0.3s ease;
-        z-index: 1000;
+        display: none;
     }
 
     nav.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
         right: 0;
+        background: var(--primary-color);
     }
 
     nav ul {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        padding: 0;
     }
 
     nav li {
-        margin: 20px 0;
-        text-align: center;
+        margin: 10px 0;
     }
 
     .section {
