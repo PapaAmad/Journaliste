@@ -210,24 +210,34 @@ nav a:hover {
         padding: 10px;
     }
 
-    nav ul {
-        display: none;
-    }
-
-    nav.active ul {
-        display: block;
-    }
-
-    nav li {
-        display: block;
-        margin: 10px 0;
-    }
-
     .menu-toggle {
         display: block;
         cursor: pointer;
-        color: white;
+        color: var(--secondary-color);
         font-size: 1.5rem;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+
+    nav li {
+        margin: 10px 0;
+        text-align: center;
     }
 
     .section {
