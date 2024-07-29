@@ -165,52 +165,85 @@
             margin-top: 30px;
         }
 
-        /* Styles pour le menu hamburger */
+        header {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
 .menu-toggle {
     display: none;
     cursor: pointer;
-    color: var(--secondary-color);
-    font-size: 2rem;
+    color: white;
+    font-size: 1.5rem;
     position: absolute;
-    top: 10px;
+    top: 50%;
     right: 20px;
+    transform: translateY(-50%);
     z-index: 1001;
 }
 
 @media(max-width: 768px) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
     .container {
         width: 100%;
         padding: 10px;
     }
+
+    nav {
+        background: transparent;
+        padding: 0;
+    }
+
     nav ul {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
         width: 100%;
         background: var(--primary-color);
-        padding: 20px 0;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
+
     nav.active ul {
         display: block;
     }
+
     nav li {
         display: block;
         margin: 10px 0;
     }
+
     .menu-toggle {
         display: block;
+    }
+
+    .section {
+        padding: 15px;
+        margin: 15px 0;
     }
 }
 
 /* Assurez-vous que le contenu ne dépasse pas l'écran */
 body {
     overflow-x: hidden;
-}
-
-.section {
-    padding: 20px;
-    margin: 20px 0;
 }
 
     </style>
@@ -220,11 +253,11 @@ body {
     <header>
         <div class="container">
             <h1>La Plume Journalistique</h1>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         </div>
     </header>
-
+    
     <nav>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <ul>
             <li><a href="#about">À Propos</a></li>
             <li><a href="#articles">Articles</a></li>
